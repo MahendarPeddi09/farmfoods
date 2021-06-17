@@ -1,12 +1,16 @@
 import React from 'react'
-import { Card, Image,Divider, Button } from 'react-native-elements';
+import { Card, Image,Divider, Button,BottomSheet, ListItem } from 'react-native-elements';
 import {View, Text, StyleSheet} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableRipple } from 'react-native-paper';
+import { TouchableOpacity } from 'react-native';
 
 export default function CatalogItem(props) {
 
     const navigation = useNavigation();
+
+    
+
     return (
 
             <View style={styles.container}>
@@ -24,13 +28,15 @@ export default function CatalogItem(props) {
                                     {props.name}
                                 </Text>
                             </View>
-                            <View style={{flex:1}}>
-                                <Text style={{fontSize:15, fontStyle:"normal",alignSelf:"stretch",justifyContent:"center"}}>
-                                    measurement
-                                </Text>
-                            </View>
+                            <TouchableOpacity style={{flex:1, flexDirection:"row"}} onPress={() => props.selectAvailableWeightUnits()}>
+                                <View >
+                                    <Text style={{fontSize:15,fontStyle:"normal",justifyContent:"center",alignSelf:"flex-start"}}>
+                                        measurement
+                                    </Text>
+                                </View>
+                            </TouchableOpacity>
                             <View style={{flex:2,alignSelf:"stretch",justifyContent:"center", flexDirection:"row",padding:0}}>
-                                <View style={{flex:2,alignSelf:"stretch",justifyContent:"center", flexDirection:"column", padding:0}}>
+                                <View style={{flex:1,alignSelf:"stretch",justifyContent:"center", flexDirection:"column", padding:0}}>
                                     <View style={{flex:1}}>
                                         <Text style={{alignSelf:"stretch",justifyContent:"center",fontSize:13}}>
                                             Available : 1000kg
@@ -38,14 +44,14 @@ export default function CatalogItem(props) {
                                     </View>
                                     <View style={{flex:2, alignContent:"center",justifyContent:"center"}}>
                                         <Text style={{alignSelf:"flex-start", fontWeight:"bold"}}>
-                                            240.00/kg
+                                            240.00 / kg
                                         </Text>
                                     </View>
                                 </View>
                                 <View style={{flex:1, alignContent:"center",justifyContent:"center"}}>
-                                    <Button title="Add" titleStyle={{color:"white", fontSize:13,textAlign:"center",paddingTop:0,}}
+                                    <Button title="Add To Cart" titleStyle={{color:"white", fontSize:13,textAlign:"center",paddingTop:0,}}
                                     containerStyle={{}}
-                                    buttonStyle={{width:"100%", borderRadius:5,backgroundColor:"green",}}
+                                    buttonStyle={{width:"100%",  borderRadius:5,backgroundColor:"green",}}
                                     />
                                 </View>
                             </View>

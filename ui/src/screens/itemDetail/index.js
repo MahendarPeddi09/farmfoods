@@ -1,9 +1,6 @@
 import React, { Component,useState } from 'react'
 import { SafeAreaView, Text, View,StyleSheet, Modal } from 'react-native'
-import { Image } from 'react-native-elements'
-import { BottomSheet } from 'react-native-elements/dist/bottomSheet/BottomSheet'
-import { Button } from 'react-native-elements/dist/buttons/Button'
-import { ListItem } from 'react-native-elements/dist/list/ListItem'
+import { Image,Button, BottomSheet,ListItem} from 'react-native-elements'
 import { ScrollView } from 'react-native-gesture-handler'
 import { Dialog, Portal } from 'react-native-paper'
 

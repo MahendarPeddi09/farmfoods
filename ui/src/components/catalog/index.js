@@ -6,11 +6,14 @@ import CatalogItem from './CatalogItem';
 
 export default class index extends Component {
 
+  constructor(props){
+    super(props);
+  }
     
     render() {
       
       const Item = ({ title }) => (
-          <CatalogItem name={title} style={styles.title}>{title}</CatalogItem>
+          <CatalogItem name={title} style={styles.title} selectAvailableWeightUnits={this.props.selectAvailableWeightUnits}>{title}</CatalogItem>
       );
       const DATA = [
         {
