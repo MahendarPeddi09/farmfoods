@@ -175,7 +175,7 @@
 
     <build>
         <defaultGoal>
-            clean compile war:war
+            clean
         </defaultGoal>
         <plugins>
             <plugin>
