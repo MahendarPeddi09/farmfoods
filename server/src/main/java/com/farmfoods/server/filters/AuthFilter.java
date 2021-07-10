@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.net.http.HttpRequest;
 
-@Component
+//@Component
 @Order(value = 300)
 public class AuthFilter implements Filter {
 

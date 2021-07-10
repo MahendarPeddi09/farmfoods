@@ -21,8 +21,36 @@ public class ItemServiceImpl implements ItemService {
     private ItemMapper itemMapper;
 
     @Override
+    public ItemDTO save(ItemDTO itemDTO) {
+
+        if(itemDTO != null){
+            Item item = itemRepository.save(itemMapper.itemDtoToItem(itemDTO));
+            itemDTO = itemMapper.itemToItemDto(item);
+        }
+
+        return itemDTO;
+    }
+
+    @Override
+    public ItemDTO update(ItemDTO itemDTO) {
+        return null;
+    }
+
+    @Override
+    public ItemDTO get(Long id) {
+        return null;
+    }
+
+    @Override
+    public void delete(Long id) {
+
+    }
+
+    @Override
     public List<ItemDTO> getAllItems() {
         List<Item> items = itemRepository.findAll();
         return itemMapper.itemsToItemDtos(items);
     }
+
+
 }

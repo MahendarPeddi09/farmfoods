@@ -27,8 +27,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     JpaBasicAuthProvider jpaBasicAuthProvider;
 
-    @Autowired
-    AuthFilter authFilter;
+//    @Autowired
+    AuthFilter authFilter = new AuthFilter();
 
     @Override
     @Bean
@@ -57,7 +57,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/api/**").authenticated()
 //                .anyRequest().permitAll()
 //                .and().httpBasic();
-        http.authorizeRequests().anyRequest().permitAll();
+        http.authorizeRequests().anyRequest().permitAll().and()
+        .httpBasic().disable();
 
     }
 }

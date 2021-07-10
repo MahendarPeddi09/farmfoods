@@ -14,6 +14,7 @@ import java.time.LocalDate;
 public class Item implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private String displayName;
